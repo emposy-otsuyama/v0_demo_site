@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: v0_app
+    build:
+      context: .
+    tty: true
+    volumes:
+      - ./src:/app
+    environment:
+      - WATCHPACK_POLLING=true
+    command: sh -c "npm run dev"
+    ports:
+      - "3000:3000"
+
